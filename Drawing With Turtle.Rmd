@@ -1,0 +1,65 @@
+---
+title: "Turtle Shapes"
+author: "Riley Bagwell"
+date: "3/7/2020"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{python}
+import turtle
+from time import sleep
+
+class TurtleGon(turtle.Turtle):
+    def colorgon(self, colorlist, side=50, fillcolor=None):
+        angle = 180 - 180 * (len(colorlist) - 2) / len(colorlist)
+        if fillcolor is not None:
+            self.fillcolor(fillcolor)
+            self.begin_fill()
+        for color in colorlist:
+            self.pencolor(color)
+            self.forward(side)
+            self.left(angle)
+        if fillcolor is not None:
+            self.end_fill()
+        return
+        
+franklin = TurtleGon()
+starstart = franklin.pos()
+franklin.pencolor('red')
+#franklin.colorgon(["red"])
+franklin.fillcolor('yellow')
+franklin.begin_fill()
+while True:
+    franklin.forward(200)
+    franklin.left(170)
+    if abs(franklin.pos()) < 1:
+        break
+franklin.end_fill()
+franklin.penup()
+franklin.goto(-150,150)
+franklin.pendown()
+franklin.begin_fill()
+franklin.colorgon(["purple","purple","purple"])
+franklin.fillcolor("purple")
+franklin.end_fill()
+franklin.penup()
+franklin.goto(-150.00,-150.00)
+franklin.pendown()
+franklin.begin_fill()
+franklin.colorgon(["green","green","green","green","green"])
+franklin.fillcolor("green")
+franklin.end_fill()
+franklin.penup()
+franklin.goto(150,150)
+franklin.pendown()
+franklin.begin_fill()
+franklin.colorgon(["blue","blue","blue","blue"])
+franklin.fillcolor("blue")
+franklin.end_fill()
+sleep(5)
+```
+
