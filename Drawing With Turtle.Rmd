@@ -63,3 +63,4 @@ franklin.end_fill()
 sleep(5)
 ```
 
+The above program was written so that the Turtle module would draw four distrinct shapes in four different locations. To do so the trutle was first instructed to draw a "Turtle Star" and location (0,0). Once the star was draw the pen had to be picked up. For the shape to be in a different location the turtle was prompted to "goto" a different location at a set of corridnates specified. Once the pen had moved to a new location it was instructed to set the pen back down. After the pen was set down the color was changed, and a fill color was selected to make sure that each shape had a distinct color. Once the pen was placed down the turtle would draw the shape, and fill it in with the specified color. This was repeated for several more shapes in which the location, color of the outline, and the fill color were all changed.
