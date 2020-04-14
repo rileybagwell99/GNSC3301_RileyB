@@ -1,0 +1,22 @@
+---
+title: "Analysis of Variance"
+author: "Riley Bagwell"
+date: "4/14/2020"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r}
+H1N1vaccines <- aov(VACC_H1N1_COUNT~INC_CAT1, data=NHFSPUF)
+summary(H1N1vaccines)
+```
+
+```{r}
+vaccineTukey <- TukeyHSD(H1N1vaccines)
+vaccineTukey
+plot(vaccineTukey)
+```
+
